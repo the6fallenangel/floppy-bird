@@ -39,7 +39,7 @@ $(function () {
         function fun() {
             let birdPosition = bird.position()
             if (birdPosition.top >= 10) {
-                bird.css('top', birdPosition.top - 7)
+                bird.css('top', birdPosition.top - 8)
             }
         }
 
@@ -57,8 +57,15 @@ $(function () {
         }
     })
 
+    $(document).on('click', function (e) {
+        e.preventDefault()
+        if (birdFlyInterval) {
+            birdJump()
+        }
+    })
+
     $('.pipe').on('animationiteration', function () {
-        let randPos = randomInt(-150, -550)
+        let randPos = randomInt(-100, -600)
         upPipe.css('top', randPos)
         downPipe.css('top', randPos + 750)
         if (canScore) {
