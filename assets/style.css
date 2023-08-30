@@ -1,0 +1,100 @@
+body{
+    background: #222;
+}
+#game{
+    background: #71C4D2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100vw;
+    /*max-height: 100vh;*/
+    width: 900px;
+    height: 600px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#bird{
+    height: 45px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+}
+.pipe{
+    height: 600px;
+    position: absolute;
+    right: -120px;
+    animation: pipe 2.2s infinite linear;
+}
+.pipe.up{
+    top: -380px;
+    transform: scale(-1,-1);
+}
+.pipe.down{
+    bottom: -380px;
+}
+@keyframes pipe {
+    0%{
+        right: -120px;
+    }
+    100%{
+        right: 900px;
+    }
+}
+.gameOver{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: "Noto Sans",sans-serif;
+    color: white;
+    font-size: 24px;
+    display: none;
+    text-align: center;
+}
+.score{
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score h2,.score span{
+    display: inline-block;
+    font-family: "Noto Sans",sans-serif;
+    font-size: 20px;
+    color: white;
+}
+.score span{
+    margin-left: 7px;
+    margin-top: 4px;
+}
+.retry{
+    border: 1px solid white;
+    background: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 20px;
+    transition: all .2s ease-in-out;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.retry:hover{
+    background: white;
+    color: #71C4D2;
+}
+small{
+    color: white;
+    font-family: "Noto Sans",sans-serif;
+    position: absolute;
+    top: 93%;
+    left: 44%;
+}
